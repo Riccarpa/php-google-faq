@@ -1,24 +1,4 @@
-<?php 
-
-$data = [
-    [
-        'title'=>"<h2>Come state implementando la recente decisione della relativa al diritto all'oblio?</h2>",
-        'paragraphs'=> [
-            '1' => '<p> La recente decisione della <a href=""> Corte di giustizia dell\'Unione europea (CGUE)</a> ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi. </p>',
-            '2' => '<p> La recente decisione della <a href=""> Corte di giustizia dell\'Unione europea (CGUE)</a> ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi. </p>',
-            '3' => '<p> La recente decisione della <a href=""> Corte di giustizia dell\'Unione europea (CGUE)</a> ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi. </p>',
-            '4' => '<p> La recente decisione della <a href=""> Corte di giustizia dell\'Unione europea (CGUE)</a> ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi. </p>',
-            '5' => '<p> La recente decisione della <a href=""> Corte di giustizia dell\'Unione europea (CGUE)</a> ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi. </p>'
-            
-        ]
-    ],
- 
-
-]
-
-
-
-?>
+<?php require_once 'partials/data/faqs.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,21 +7,47 @@ $data = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-   <?php
-
-   foreach($data as $item ){
-       echo $item['title'];
-       
-       foreach($item['paragraphs'] as $key => $p){
-           echo $p;
-       }
-   }
-
-   
-   
-   ?>
+    <header>
+        <div class="header-top">
+            <img src="img/google.svg" alt="">
+            <span>Privacy e termini</span>
+        </div>
+        <div class="header-bottom">
+            <ul>
+                <li>Introduzione</li>
+                <li>Norme sulla privacy</li>
+                <li>termini di servizio</li>
+                <li>Tecnologie</li>
+                <li>Domande frequenti</li>
+            </ul>
+        </div>
+        <hr>
+    </header>
+   <main>
+       <div class="container">
+           <?php
+           foreach($faqs as $item ){ ?>
+               <h2><?php echo  $item['title'] ; ?></h2> 
+               <?php foreach($item['paragraphs'] as $p){
+                   echo $p;
+               } ?>
+           <?php } ?>
+           
+       </div>
+   </main>
+   <footer>
+      <div class="container">
+          <ul>
+              <li>Google</li>
+              <li>Tutto su google</li>
+              <li>Privacy</li>
+              <li>Termini</li>
+          </ul>
+      </div> 
+   </footer>
     
 </body>
 </html>
